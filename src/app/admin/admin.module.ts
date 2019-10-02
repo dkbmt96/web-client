@@ -8,9 +8,10 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin.component';
 
 @NgModule({
-  declarations: [LoginComponent, DashboardComponent, RegisterComponent],
+  declarations: [LoginComponent, DashboardComponent, RegisterComponent, AdminComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

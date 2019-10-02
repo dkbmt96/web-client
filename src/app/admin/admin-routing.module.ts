@@ -3,19 +3,26 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: DashboardComponent,
-    },
-    {
-        path: 'login',
-        component: LoginComponent
-    },
-    {
-        path: 'register',
-        component: RegisterComponent
+        component: AdminComponent,
+        children: [
+            {
+                path: 'login',
+                component: LoginComponent
+            },
+            {
+                path: 'register',
+                component: RegisterComponent
+            },
+            {
+                path: 'dashboard',
+                component: DashboardComponent
+            }
+        ]
     }
 ]
 

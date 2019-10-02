@@ -19,10 +19,13 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (!this.currentUser) {
+      this.router.navigate(['admin','login']);
+    }
   }
 
   logout() {
     this.authenticationService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['admin','login']);
   }
 }

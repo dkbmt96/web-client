@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   ) { 
     // redirect to home if already logged in
     if (this.authenticationService.currentUserValue) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/admin']);
     }
   }
 
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     });
 
     // get return url from route param or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/admin';
   }
 
   get f() { return this.loginForm.controls; }
